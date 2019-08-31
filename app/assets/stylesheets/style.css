@@ -1,0 +1,66 @@
+body {
+  background-color: lightblue
+}
+
+.done{
+  color: blue
+}
+
+.todo-container {
+  text-align: center;
+  justify-content: center
+}
+
+.todo-list ul {
+  list-style: none;
+  text-align: center;
+  margin-right: 20px
+}
+.todo-list ul button:hover {
+  cursor: pointer;
+  background-color: lightgray
+}
+
+.todo-list ul button {
+  border-radius: 4px
+}
+
+.delete {
+  float: right;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  background-color: beige;
+  border: none
+}
+.delete:hover {
+  color: red;
+  cursor: pointer;
+}
+
+
+.new-todo {
+  border: 1px solid gray;
+  width: 20%;
+  margin-left: 40%;
+  background-color: white
+}
+
+.todo{
+  /* margin-left: 40%; */
+  border: 1px solid blue;
+  width: 10%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  background-color: beige;
+  position: relative;
+}
+
+.todo-list{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px
+}
+
