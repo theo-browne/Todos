@@ -9,11 +9,19 @@ class TodoListItem extends React.Component {
       done: this.props.todo.done
     
     }
+
+    // this.isDone()
     this.toggleDone = this.toggleDone.bind(this)
   }
 
+  // isDone() {
+  //   if (this.props.todo.done) {
+  //     e.target.parentNode.classList.add("done")
+  //   }
+  // }
+
   toggleDone(e) {
-    if (this.state.done === false) {
+    if (e.target.innerText === "Done") {
       this.setState({ done: true });
       // e.target.parentNode.classList.add("done")
       // e.target.innerText = "Not Done"
@@ -35,7 +43,7 @@ class TodoListItem extends React.Component {
       text = "Not Done"
     }
     return (
-      <div class="todo">
+      <div className="todo">
         <button onClick={() => this.props.deleteTodo(this.props.todo)} class="delete">X</button>
       <ul className={done}>
         <li>{this.props.todo.title}</li>

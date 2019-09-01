@@ -19,6 +19,7 @@ class Api::TodosController < ApplicationController
   end
 
    def update
+    debugger
       @todo = Todo.find(params[:id])
       if @todo.update(todo_params)
         render json: @todo
