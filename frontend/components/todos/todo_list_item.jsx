@@ -9,6 +9,7 @@ class TodoListItem extends React.Component {
       done: this.props.todo.done
     
     }
+    
 
     // this.isDone()
     this.toggleDone = this.toggleDone.bind(this)
@@ -21,16 +22,26 @@ class TodoListItem extends React.Component {
   // }
 
   toggleDone(e) {
-    if (e.target.innerText === "Done") {
+    
+    let newTodo = {
+      id: this.state.id,
+      done: !this.state.done,
+      title: this.state.title,
+      body: this.state.body
+    }
+    this.props.updateTodo(newTodo)
+    if (this.state.done === false) {
+      
       this.setState({ done: true });
       // e.target.parentNode.classList.add("done")
       // e.target.innerText = "Not Done"
     } else {
+      
       this.setState({ done: false });
       // e.target.parentNode.classList.remove("done");
       // e.target.innerText = "Done"
     }
-    this.props.updateTodo(this.state);
+    
   }
 
 
