@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import TodoDetailView from './todo_detail_view';
-import allSteps from '../../reducers/selectors'
+import { allSteps } from '../../reducers/selectors'
 import { receiveSteps, fetchSteps} from '../../actions/todo_actions'
 
 

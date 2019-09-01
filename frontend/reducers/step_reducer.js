@@ -5,7 +5,7 @@ export const stepReducer = (state = {}, action) => {
   let newState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_STEPS:
-      newState = {}
+      // newState = {}
       action.data.forEach(step => {
         newState[step.id] = step
       });
