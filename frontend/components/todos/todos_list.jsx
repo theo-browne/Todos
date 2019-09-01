@@ -16,18 +16,22 @@ class List extends React.Component {
 
     return (
       <div className="todo-container">
+        <div className="todos">
         <h1>Todo List</h1>
-        <div className="todo-list">
+        <ul>
+       
           {
-            this.props.todos.map(todo => (<TodoListItem key={todo.id} updateTodo={this.props.updateTodo} deleteTodo={this.props.deleteTodo} todo={todo} removeTodo={this.props.removeTodo} receiveTodo={this.props.receiveTodo} />))
-          }
-        </div>
+              
+            this.props.todos.map(todo => (
+              <div className="todo-list">
+              <TodoListItem key={todo.id} receiveSteps={this.props.receiveSteps} fetchSteps={this.props.fetchSteps} updateTodo={this.props.updateTodo} deleteTodo={this.props.deleteTodo} todo={todo} removeTodo={this.props.removeTodo} receiveTodo={this.props.receiveTodo} />
+              </div>))
+         
+              }
+        </ul>
         <TodoForm clearErrors={this.props.clearErrors} createTodo={this.props.createTodo} errors={this.props.errors} />
 
-        {/* {this.props.errors.map( error =>  (
-          <p> {error} </p>
-        )
-        )} */}
+        </div>
       </div>
     )}
   }

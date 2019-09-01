@@ -1,4 +1,6 @@
 import React from 'react';
+import TodoDetailViewContainer from './todo_detail_view_container'
+
 class TodoListItem extends React.Component {
   constructor(props) {
     super(props);
@@ -14,6 +16,14 @@ class TodoListItem extends React.Component {
     // this.isDone()
     this.toggleDone = this.toggleDone.bind(this)
   }
+
+  componentDidMount() {
+    this.props.fetchSteps(this.props.todo);
+  }
+
+
+
+
 
   // isDone() {
   //   if (this.props.todo.done) {
@@ -61,6 +71,7 @@ class TodoListItem extends React.Component {
         <li>{this.props.todo.body}</li>
         <button onClick={this.toggleDone}>{text}</button>
       </ul>
+        <TodoDetailViewContainer />
       </div>
     )
   }

@@ -30,9 +30,21 @@ export const deleteTodo = (todo) => {
 export const updateTodo = (todo) => {
   return $.ajax({
     method: 'PATCH',
-    url: `api/todos/${todo.id}`,
+    url: `/api/todos/${todo.id}`,
     data: {
       todo
     }
   })
 }
+
+export const fetchSteps = (todo)  => {
+  return $.ajax({
+    method: 'GET',
+    url :`/api/todos/${todo.id}/steps`
+  })
+}
+// $.ajax({
+//   method: 'GET',
+//   url: `/api/todos/${todo.id}/steps`
+// }).then(steps => dispatch(receiveSteps(steps)))
+// window.receiveSteps = receiveSteps

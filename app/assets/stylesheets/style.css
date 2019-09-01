@@ -1,20 +1,45 @@
+html {
+  font-family: 'Oswald', sans-serif;
+}
 body {
-  background-color: lightblue
+  background-color: #aeb1f1
 }
 
 .done{
   color: blue
 }
+.todos {
+  display: inline-block;
+  width: 100%;
+  /* justify-content: center */
+  text-align: center
+}
 
 .todo-container {
   text-align: center;
-  justify-content: center
+  justify-content: center;
+  justify-self: center;
+  width: 100%
+  /* margin-left: 50%  */
 }
 
 .todo-list ul {
   list-style: none;
+  padding: 0;
+  margin: 0
+  /* text-align: center; */
+  /* margin-right: 30% */
+}
+
+.todos ul {
+  margin: 0;
+  padding: 0
+}
+
+.todo-form {
+  justify-content: center;
   text-align: center;
-  margin-right: 30%
+  display: flex
 }
 .todo-list ul button:hover {
   cursor: pointer;
@@ -33,6 +58,7 @@ body {
   background-color: beige;
   border: none
 }
+
 .delete:hover {
   color: red;
   cursor: pointer;
@@ -42,15 +68,16 @@ body {
 .new-todo {
   border: 1px solid gray;
   width: 20%;
-  margin-left: 40%;
-  background-color: white
+  /* margin-left: 40%; */
+  background-color: white;
+  justify-self: center
 }
 
 .todo{
   /* margin-left: 40%; */
   border: 1px solid blue;
-  width: 10%;
-  display: flex;
+  width: 30%;
+  display: inline-block;
   text-align: center;
   justify-content: center;
   margin-bottom: 10px;
@@ -58,9 +85,16 @@ body {
   position: relative;
 }
 
+
 .todo-list{
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px
 }
 
+.step-list {
+  display: flex;
+  background-color: red;
+  align-self: flex-end;
+  padding: 0
+}

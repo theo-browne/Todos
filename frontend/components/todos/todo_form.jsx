@@ -63,7 +63,7 @@ class TodoForm extends React.Component {
    
 
     return (
-      <div>
+      <div className="todo-form">
     <form onSubmit={this.handleSubmit} className="new-todo">
       <label>Title</label>
       <br/>

@@ -26,7 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
     //   done: false
     // }
   }
-  const store = configureStore( {todos} );
+
+  const steps = {}
+
+
+  const store = configureStore( );
   window.store = store
   ReactDom.render(<Root store={store} />, root)
 })
