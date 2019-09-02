@@ -43,6 +43,36 @@ export const fetchSteps = (todo)  => {
     url :`/api/todos/${todo.id}/steps`
   })
 }
+
+export const createStep = (todo, step) => {
+  
+  return $.ajax({
+    method: 'POST',
+    url: `/api/todos/${todo.id}/steps`,
+    data: {
+      step: step
+    }
+  });
+}
+
+
+export const updateStep = (step) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/steps/${step.id}`,
+    data: {
+      step
+    }
+  })
+}
+
+export const deleteStep = (step) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/steps/${step.id}`,
+  });
+}
+
 // $.ajax({
 //   method: 'GET',
 //   url: `/api/todos/${todo.id}/steps`

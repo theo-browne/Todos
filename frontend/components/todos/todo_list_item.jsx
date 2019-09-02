@@ -15,6 +15,7 @@ class TodoListItem extends React.Component {
 
     // this.isDone()
     this.toggleDone = this.toggleDone.bind(this)
+    this.toggleDetail = this.toggleDetail.bind(this)
   }
 
   componentDidMount() {
@@ -37,7 +38,8 @@ class TodoListItem extends React.Component {
       id: this.state.id,
       done: !this.state.done,
       title: this.state.title,
-      body: this.state.body
+      body: this.state.body,
+      detail: false
     }
     this.props.updateTodo(newTodo)
     if (this.state.done === false) {
@@ -54,24 +56,31 @@ class TodoListItem extends React.Component {
     
   }
 
+  toggleDetail(){
+    this.setState({detail: !this.state.detail})
+  }
 
 
   render() {
     let done = "";
-    let text = "Done"
+    let text = "Done";
+    let detail = []
     if (this.state.done === true) {
       done = "done";
       text = "Not Done"
     }
+    if (this.state.detail === true) {
+      detail = <TodoDetailViewContainer todo={this.props.todo} />
+    }
     return (
-      <div className="todo">
+      <div className='todo' >
         <button onClick={() => this.props.deleteTodo(this.props.todo)} class="delete">X</button>
-      <ul className={done}>
-        <li>{this.props.todo.title}</li>
-        <li>{this.props.todo.body}</li>
+        <ul className={done}>
+        <li onClick={this.toggleDetail}>{this.props.todo.title}</li>
+        {/* <li>{this.props.todo.body}</li> */}
         <button onClick={this.toggleDone}>{text}</button>
       </ul>
-        <TodoDetailViewContainer />
+        {detail}
       </div>
     )
   }

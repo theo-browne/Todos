@@ -1,5 +1,5 @@
 class Step < ApplicationRecord
-  validates :title, :todo_id, presence: true
+  validates :title,  presence: true
 
   validates :done, inclusion: { in: [true, false] }
 

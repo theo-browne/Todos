@@ -8,12 +8,16 @@ export const allTodos = (state) => {
 }
 
 
-export const allSteps = (state) => {
-  let keys = Object.keys(state.todos);
-  let steps = keys.map(step => (
-    state.steps[step]
-  ))
-  debugger
+export const allSteps = (state, todo) => {
+  
+  let keys = Object.keys(state.steps);
+  let steps = [];
+  keys.forEach(key => {
+    if (state.steps[key].todo_id === todo.id) {
+      steps.push(state.steps[key])
+    }
+  })
+  
   return steps
 }
 

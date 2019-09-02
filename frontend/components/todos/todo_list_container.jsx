@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import List from './todos_list';
-import { receiveTodo, fetchTodos, createTodo, deleteTodo, updateTodo, fetchSteps, receiveSteps, receiveTodos, RECEIVE_TODOS, RECEIVE_TODO, removeTodo } from '../../actions/todo_actions'
+import { receiveTodo, fetchTodos, createTodo, deleteTodo, updateTodo,  receiveTodos, RECEIVE_TODOS, RECEIVE_TODO, removeTodo } from '../../actions/todo_actions'
+import { fetchSteps, receiveSteps} from '../../actions/step_actions'
 import {allTodos} from '../../reducers/selectors'
 import { clearErrors } from '../../actions/error_actions';
 

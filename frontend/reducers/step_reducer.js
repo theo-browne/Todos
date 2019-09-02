@@ -1,4 +1,4 @@
-import { RECEIVE_STEPS } from '../actions/todo_actions';
+import { RECEIVE_STEPS, RECEIVE_STEP, REMOVE_STEP } from '../actions/step_actions';
 
 
 export const stepReducer = (state = {}, action) => {
@@ -9,7 +9,12 @@ export const stepReducer = (state = {}, action) => {
       action.data.forEach(step => {
         newState[step.id] = step
       });
+    case RECEIVE_STEP:
+      newState[action.data.id] = action.data;
       return newState
+      case REMOVE_STEP:
+       delete newState[action.data.id]
+       return newState 
     default:
       return state
   }

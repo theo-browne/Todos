@@ -10,6 +10,7 @@ class Api::StepsController < ApplicationController
 
   def create
       @step = Step.new(step_params)
+      
       if @step.save
         render json: @step
       else
@@ -38,6 +39,6 @@ class Api::StepsController < ApplicationController
 
 
   def step_params
-    params.require(:todo).permit(:body, :done)
+    params.require(:step).permit(:title, :done, :todo_id)
   end
 end
